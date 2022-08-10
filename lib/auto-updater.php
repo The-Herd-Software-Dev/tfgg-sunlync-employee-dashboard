@@ -54,8 +54,6 @@ class tfgg_emp_dash_updater {
         }
         
         $this->pluginData = get_plugin_data( $this->pluginFile );
-
-        echo $this->pluginData;
     }
 
     /**
@@ -65,7 +63,6 @@ class tfgg_emp_dash_updater {
     */
     private function getRepoReleaseInfo()
     {
-        echo 'WE ARE GETTING RELEASE INFO!!';
         if ( ! empty( $this->githubAPIResult ) )
         {
             return;
@@ -73,7 +70,7 @@ class tfgg_emp_dash_updater {
 
         // Query the GitHub API
         $url = "https://api.github.com/repos/{$this->username}/{$this->repo}/releases";
-
+        
         if ( ! empty( $this->accessToken ) )
         {
             $url = add_query_arg( array( "access_token" => $this->accessToken ), $url );
@@ -112,7 +109,7 @@ class tfgg_emp_dash_updater {
         $this->getRepoReleaseInfo();
 
         $doUpdate = version_compare( $this->githubAPIResult->tag_name, $transient->checked[$this->slug], '>' );
-
+        
         if ( $doUpdate )
         {
             $package = $this->githubAPIResult->zipball_url;
