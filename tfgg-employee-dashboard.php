@@ -3,7 +3,7 @@
 /**
  * Plugin Name: TFGG Employee Dashboard
  * Description: Dashboard for SunLync stats
- * Version:     1.0.0.0
+ * Version:     0.0.0.0
  * Author:      The Herd llc.
  */
 
