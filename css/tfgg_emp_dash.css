@@ -1,0 +1,52 @@
+:root {
+    --tfgg_gold: #f9b233;
+    --tfgg_brown: #3f1c16;
+    --tfgg_orange: #f26532;
+  }
+
+.tfgg-ed-button {
+    background-color: var(--tfgg_orange);
+    border-color: var(--tfgg_orange);
+}
+
+.tfgg-ed-button:hover {
+    background-color: var(--tfgg_brown);
+    border-color: var(--tfgg_brown);
+}
+
+.tfgg-ed-button:active,
+.tfgg-ed-button:focus {
+    border-color: var(--tfgg_orange) !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--tfgg_gold) !important;
+    outline: 0 none;
+}
+
+.tfgg-ed-button-active{
+    background-color: var(--tfgg_gold);
+    border-color: var(--tfgg_gold);
+}
+
+.tfgg-ed-busy {
+    display:none;
+}
+
+.tfgg-text-color-orange {
+    color: var(--tfgg_orange);
+}
+
+a.tfgg-text-color-orange:hover{
+    color: var(--tfgg_gold);
+}
+
+.tfgg-text-color-gold {
+    color: var(--tfgg_gold);
+}
+
+a.tfgg-text-color-gold:hover,
+a.tfgg-text-color-brown:hover {
+    color: var(--tfgg_orange);
+}
+
+.tfgg-text-color-brown {
+    color: var(--tfgg_brown);
+}
