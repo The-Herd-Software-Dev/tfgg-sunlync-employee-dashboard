@@ -10,7 +10,7 @@
      */
     function tfgg_ed_get_api_url(){
         //we are not adding the class (TSunlyncAPI) in this call since there are now multiple (TSunLyncAPI / TCart etc)
-        return get_option('tfgg_emp_dash_api_protocol').'://'.get_option('tfgg_scp_api_url').':'.get_option('tfgg_scp_api_port').'/datasnap/rest/';    
+        return get_option('tfgg_emp_dash_api_protocol').'://'.get_option('tfgg_emp_dash_api_url').':'.get_option('display_tfgg_emp_dash_api_port').'/datasnap/rest/';    
     }
 
     /**
@@ -23,12 +23,12 @@
      */
     function tfgg_ed_execute_api_request($method, $url, $data){
         if(!strpos($url,'GenericGetAPIVersion')){
-            $url.='/'.get_option('tfgg_scp_api_mrkt'); 
+            $url.='/'.get_option('tfgg_emp_dash_api_mrkt'); 
         }
         
         $ch = curl_init($url);
         //set all common options first
-        curl_setopt($ch, CURLOPT_USERPWD,get_option('tfgg_scp_api_user').":".get_option('tfgg_scp_api_pass'));                                                                                                                  
+        curl_setopt($ch, CURLOPT_USERPWD,get_option('tfgg_emp_dash_api_user').":".get_option('tfgg_emp_dash_api_pass'));                                                                                                                  
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         
         switch (StrToUpper($method)){

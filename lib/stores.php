@@ -169,7 +169,7 @@
      */
     function tfgg_emp_dash_get_store_clockins($url){
 
-        $url.='/'.get_option('tfgg_scp_api_mrkt'); 
+        $url.='/'.get_option('tfgg_emp_dash_api_mrkt'); 
 
         $ch = curl_init($url);
         //set all common options first
