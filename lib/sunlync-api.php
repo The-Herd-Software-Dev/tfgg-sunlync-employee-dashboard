@@ -10,7 +10,7 @@
      */
     function tfgg_ed_get_api_url(){
         //we are not adding the class (TSunlyncAPI) in this call since there are now multiple (TSunLyncAPI / TCart etc)
-        return get_option('tfgg_emp_dash_api_protocol').'://'.get_option('tfgg_emp_dash_api_url').':'.get_option('display_tfgg_emp_dash_api_port').'/datasnap/rest/';    
+        return get_option('tfgg_emp_dash_api_protocol').'://'.get_option('tfgg_emp_dash_api_url').':'.get_option('tfgg_emp_dash_api_port').'/datasnap/rest/';    
     }
 
     /**
@@ -64,7 +64,7 @@
         curl_close($ch);
 		
 		if(($result===FALSE)||($result=='')){
-			throw new Exception("ERROR: Invalid URL");
+			throw new Exception("ERROR: Invalid URL: ".$url);
 			exit;
         }
 
